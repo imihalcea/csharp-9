@@ -1,13 +1,12 @@
 ﻿using System;
+using init_only_setters;
 
-namespace init_only_setters
-{
-    class Program
+    //un pas de plus vers Immutabilité
+    //https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/proposals/csharp-9.0/init
+    
+    var b = new Book("C# explained","Pim")
     {
-        static async Task Main(string[] args)
-        {
-            await Task.Delay(100);
-            Console.WriteLine("Hello World!");
-        }
-    }
-}
+        Price = 15f
+    };
+    //b.Price=17f; //boom c'est init only
+    Console.WriteLine($"{b}");
