@@ -18,15 +18,12 @@ namespace source_generators
     {
         public void Execute(GeneratorExecutionContext context)
         {
-           string str=new DirectoryInfo("/home/ionut/Code/Learn/csharp-9/source-generators_consumer/").Name; 
            foreach(var file in FilesFromDisk(context,"csv"))
            {
               var (className, classCode) = GenerateClassFromCsv(file); 
-              //Debug.Write(classCode);
-              //File.WriteAllText("gen.txt",classCode);
               context.AddSource($"Csv_{className}",classCode); 
            }
-          context.AddSource("toto.cs",SourceText.From($"[assembly: System.Reflection.AssemblyMetadata(\"alert\",\"{str}\")]", Encoding.UTF8));
+          //context.AddSource("toto.cs",SourceText.From($"[assembly: System.Reflection.AssemblyMetadata(\"alert\",\"yoyo\")]", Encoding.UTF8));
 
         }
  
@@ -37,7 +34,7 @@ namespace source_generators
 
         private string[] FilesFromDisk(GeneratorExecutionContext context, string fileExtension)
         {
-            //pour une raison que j'ignore Roslyn ne charge pas les additiona files specifies dans le csv
+            //pour une raison que j'ignore Roslyn ne charge pas les additional files specifies dans le csproj
             //la bonne façon de faire est d'utiliser FilesFromContext
             return new DirectoryInfo("/home/ionut/Code/Learn/csharp-9/source-generators_consumer/")
             .GetFiles($"*.{fileExtension}").Select(f=>f.FullName).ToArray();
@@ -59,7 +56,6 @@ namespace source_generators
         {
             var csvData = ParseCsvFile(csvFilePath);
             var objectPoperties =GetObjectProperties(csvData);
-            var cs = new CSharp();
             return Source(
                     And(
                         Using("System.Collections.Generic"),
@@ -95,15 +91,13 @@ namespace source_generators
            return headerLine.Zip(types).ToArray();
         }
 
-
-
-        // Guesses type of property for the object from the value of a csv field
-        public static string GetCsvFieldType(string exemplar) => exemplar switch
-        {
-            _ when bool.TryParse(exemplar, out _) => "bool",
-            _ when int.TryParse(exemplar, out _) => "int",
-            _ when double.TryParse(exemplar, out _) => "double",
-            _ => "string"
-        };
+        public static string GetCsvFieldType(string exemplar) => 
+            exemplar switch
+            {
+                _ when bool.TryParse(exemplar, out _) => "bool",
+                _ when int.TryParse(exemplar, out _) => "int",
+                _ when double.TryParse(exemplar, out _) => "double",
+                _ => "string"
+            };
     }
 }
