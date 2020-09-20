@@ -1,6 +1,8 @@
 ## Points importants
 
-* Productivité : eviter le code non interessant (INotifyPropertyChanged, parsing et generation de structures de données)
+* Productivité : 
+  * eviter le code non interessant (INotifyPropertyChanged, parsing et generation de structures de données)
+  * https://github.com/dotnet/roslyn-sdk/blob/master/samples/CSharp/SourceGenerators/GeneratedDemo/UseAutoNotifyGenerator.cs
 * Perfs : 
     * pousser des traitements qui se font au runtime vers le compile time
     * on imagine des cas d'usage ou l"on peut eviter de faire de la reflexion au runtime
