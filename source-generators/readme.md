@@ -13,6 +13,7 @@
 ### Liens interessants:
 * https://devblogs.microsoft.com/dotnet/introducing-c-source-generators/
 * https://github.com/dotnet/roslyn/blob/master/docs/features/source-generators.cookbook.md
+* https://github.com/dotnet/roslyn-sdk/tree/master/samples/CSharp/SourceGenerators
 * https://www.youtube.com/watch?v=JSFZ3qDx83g (3h48 par Immo Landwerth - PM DotNet)
 * https://docs.microsoft.com/fr-fr/dotnet/fsharp/tutorials/type-providers/
 
