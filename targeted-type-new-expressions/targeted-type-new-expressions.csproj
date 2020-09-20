@@ -4,6 +4,7 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
     <RootNamespace>targeted_type_new_expressions</RootNamespace>
+    <LangVersion>preview</LangVersion>
   </PropertyGroup>
 
 </Project>
