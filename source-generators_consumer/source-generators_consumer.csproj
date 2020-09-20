@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>source_generators_consumer</RootNamespace>
+    <LangVersion>preview</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+      <ProjectReference Include="..\source-generators\source-generators.csproj" 
+      OutputItemType="Analyzer" 
+      ReferenceOutputAssembly="false" />
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="Personnes.csv" CopyToOutputDirectory="PreserveNewest"/>
+  </ItemGroup>
+  </Project>

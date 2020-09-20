@@ -21,3 +21,8 @@ using System.Threading.Tasks;
             await Task.Delay(100);
             Console.WriteLine("Hello World!");
             return 0;
+
+    // pour les pointus : allez decompiler le source code et regardez le code genéré 
+    // motivations :
+    //    * rendre C# un langage plus concis
+        
