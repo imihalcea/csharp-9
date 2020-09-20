@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>partial_methods_generators</RootNamespace>
+    <LangVersion>preview</LangVersion>
+  </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="System.Reflection.Metadata" Version="5.0.0-rc.1.20451.14" />
+        <PackageReference Include="System.Collections.Immutable" Version="5.0.0-rc.1.20451.14" PrivateAssets="all" />
+        <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="3.8.0-3.final" PrivateAssets="all" />
+        <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.0" PrivateAssets="all" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\partial-methods-decorators\partial-methods-decorators.csproj" />
+    </ItemGroup>
+</Project>
