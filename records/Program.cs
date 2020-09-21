@@ -34,6 +34,7 @@ namespace records
             // va dans le bon sens mais
             // on aurait pu avoir un constucteur de facon implicite avec toutes les props à la F#
             // pareil pour le deconstruct
+            
             //Movie m = new("Batman begins",4500000);
 
             var m = new Movie(){Title="Batman begins",Budget=42};

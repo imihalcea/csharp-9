@@ -7,6 +7,8 @@ public class M {
     [ModuleInitializer]
     internal static void WhenAssemblyLoads()
     {
-        System.Console.WriteLine("I'm in");
+        System.Console.WriteLine("Init.....!");
+        System.Threading.Thread.Sleep(2000);
+        System.Console.WriteLine("Init done!");
     }
 }
